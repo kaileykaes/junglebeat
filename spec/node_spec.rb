@@ -11,5 +11,6 @@ RSpec.describe Node do
 
   it 'has attributes' do 
     expect(@node.data).to eq('plop')
+    expect(@node.next_node).to eq(nil)
   end
 end
