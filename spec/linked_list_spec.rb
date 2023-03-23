@@ -12,10 +12,6 @@ RSpec.describe LinkedList do
     it '#head' do 
       expect(@list.head).to eq(nil)
     end
-    
-    xit '#next_node' do
-      expect(@list.head.next_node).to eq(nil)
-    end
   end
 
   describe 'behavior' do 
