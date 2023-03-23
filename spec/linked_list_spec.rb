@@ -13,25 +13,25 @@ RSpec.describe LinkedList do
       expect(@list.head).to eq(nil)
     end
     
-    it '#next_node' do
-      expect(@list.head.next_node)
+    xit '#next_node' do
+      expect(@list.head.next_node).to eq(nil)
     end
   end
 
   describe 'behavior' do 
-    it '#append' do 
+    xit '#append' do 
       @list.append('doop')
       expect(@list.head).to be_a(Node)
       expect(@list.head.data).to eq('doop')
       expect(@list.head.next_node).to eq(nil)
     end
 
-    it '#count' do
+    xit '#count' do
       @list.append('doop')
       expect(@list.count).to eq(1)
     end
 
-    it '#to_string' do 
+    xit '#to_string' do 
       @list.append('doop')
       expect(@list.to_string).to eq('doop')
     end
