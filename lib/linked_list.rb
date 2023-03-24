@@ -78,4 +78,21 @@ class LinkedList
     end
     node_data_container.join(' ')
   end
+
+  def includes?(node_data) 
+    present_node = @head 
+    if present_node.data == node_data 
+      true
+    else
+      until present_node.next_node == nil
+        return true if present_node.data == node_data
+        present_node = present_node.next_node
+      end
+    end
+    if present_node.data == node_data 
+      true 
+    else 
+      false
+    end
+  end
 end
