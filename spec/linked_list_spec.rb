@@ -58,4 +58,16 @@ RSpec.describe LinkedList do
       expect(@list.to_string).to eq('doop deep crack')
     end
   end
+
+  describe '#prepend' do 
+    it 'adds node to beginning of list' do 
+      @list.append('doop')
+      @list.append('deep')
+      @list.append('crack')
+      @list.prepend('dop')
+      expect(@list.count).to eq(4)
+      expect(@list.head.data).to eq('dop')
+      expect(@list.to_string).to eq('dop doop deep crack')
+    end
+  end
 end
