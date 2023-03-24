@@ -70,4 +70,15 @@ RSpec.describe LinkedList do
       expect(@list.to_string).to eq('dop doop deep crack')
     end
   end
+
+  describe '#insert' do 
+    it 'inserts node at specific position' do 
+      @list.append('doop')
+      @list.append('deep')
+      @list.append('crack')
+      @list.insert(2, 'shush')
+      expect(@list.count).to eq(4)
+      expect(@list.to_string).to eq('doop deep shush crack')
+    end
+  end
 end
