@@ -6,6 +6,19 @@ class LinkedList
   end
 
   def append(data)
-    @head = Node.new(data)
+    node = Node.new(data)
+    @head = node 
+  end
+
+  def count 
+    if @head != nil
+      1
+    else
+      0
+    end
+  end
+
+  def to_string
+    @head.data
   end
 end
