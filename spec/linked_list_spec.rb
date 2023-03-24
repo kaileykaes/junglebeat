@@ -106,4 +106,16 @@ RSpec.describe LinkedList do
       expect(@list.includes?('dep')).to eq(false)
     end
   end
+
+  describe '#pop' do 
+    it 'removes node from list and returns data' do 
+      @list.append('deep')
+      @list.append('woo')
+      @list.append('shi')
+      @list.append('shu')
+      @list.append('blop')
+      expect(@list.pop).to eq('blop')
+      expect(@list.to_string).to eq('deep woo shi')
+    end
+  end
 end
