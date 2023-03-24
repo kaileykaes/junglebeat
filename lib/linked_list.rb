@@ -41,4 +41,16 @@ class LinkedList
     node_data_container << present_node.data
     node_data_container.join(' ')
   end
+
+  def prepend(data)
+    if @head == nil
+      @head = Node.new(data)
+    else
+      present_node = Node.new(data)
+      present_node.next_node = @head
+      @head = present_node
+    end
+  end
+
+  
 end
