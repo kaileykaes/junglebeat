@@ -30,8 +30,15 @@ class LinkedList
     end
     tick_marks
   end
-
+  
   def to_string
-    @head.data
+    node_data_container = []
+    present_node = @head 
+    while present_node.next_node != nil
+      node_data_container << present_node.data
+      present_node = present_node.next_node 
+    end
+    node_data_container << present_node.data
+    node_data_container.join(' ')
   end
 end
