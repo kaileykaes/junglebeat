@@ -66,4 +66,16 @@ class LinkedList
     end
   end
 
+  def find(position, amount)
+    node_data_container = []
+    present_node = @head
+    position.times do 
+      present_node = present_node.next_node
+    end
+    amount.times do 
+      node_data_container << present_node.data
+      present_node = present_node.next_node
+    end
+    node_data_container.join(' ')
+  end
 end
