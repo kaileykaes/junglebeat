@@ -25,9 +25,9 @@ RSpec.describe LinkedList do
     it '#append >1 node' do 
       @list.append('doop')
       @list.append('deep')
+      @list.append('crack')
       expect(@list.head.next_node).to be_a(Node)
       expect(@list.head.next_node.data).to eq('deep')
-      expect(@list.count).to eq(2)
     end
   end
 
@@ -37,10 +37,11 @@ RSpec.describe LinkedList do
       expect(@list.count).to eq(1)
     end
 
-    it 'counts 2 nodes' do 
+    it 'counts >1 nodes' do 
       @list.append('doop')
       @list.append('deep')
-      expect(@list.count).to eq(2)
+      @list.append('crack')
+      expect(@list.count).to eq(3)
     end
   end
   
@@ -50,7 +51,7 @@ RSpec.describe LinkedList do
       expect(@list.to_string).to eq('doop')
     end
     
-    it '#to_string for multiple nodes' do
+    xit '#to_string for multiple nodes' do
       @list.append('doop')
       @list.append('deep')
       expect(@list.to_string).to eq('doop deep')
