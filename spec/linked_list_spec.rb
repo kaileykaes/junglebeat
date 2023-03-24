@@ -76,9 +76,11 @@ RSpec.describe LinkedList do
       @list.append('doop')
       @list.append('deep')
       @list.append('crack')
+      @list.append('pof')
       @list.insert(2, 'shush')
+      require 'pry'; binding.pry
       expect(@list.count).to eq(4)
-      expect(@list.to_string).to eq('doop deep shush crack')
+      expect(@list.to_string).to eq('doop deep shush crack pof')
     end
   end
 end
