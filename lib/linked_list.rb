@@ -95,4 +95,16 @@ class LinkedList
       false
     end
   end
+
+  def pop
+    prior_node = @head
+    present_node = @head.next_node
+    until present_node.next_node == nil
+      present_node = present_node.next_node
+      prior_node = prior_node.next_node
+    end
+    saved_data = present_node.data 
+    prior_node.next_node = nil
+    saved_data
+  end
 end
