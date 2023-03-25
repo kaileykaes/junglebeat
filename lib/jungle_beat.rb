@@ -11,4 +11,8 @@ class JungleBeat
       @list.append(data)
     end
   end
+
+  def count
+    @list.count
+  end
 end
