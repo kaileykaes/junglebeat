@@ -19,9 +19,33 @@ RSpec.describe JungleBeat do
   describe '#append' do 
     it 'appends nodes' do
       @jb.append("deep doo ditt")
-      
       expect(@jb.list.head.data).to eq('deep')
       expect(@jb.list.head.next_node.data).to eq('doo')
+    end
+  end
+
+  describe '#validate?' do 
+    it 'only appends nodes for valid data' do 
+      @jb.append('crack deep frack click doop gof pof hjk;')
+      expect(@jb.list.to_string).to eq('crack deep frack click doop gof pof')
+    end
+  end
+
+  describe '#prepend' do 
+    it 'prepends nodes' do 
+      jb1 = JungleBeat.new("deep")
+      jb1.prepend("tee tee tee Mississippi")
+      expect(jb1.all).to eq('tee tee tee deep')
+    end
+  end
+
+  describe '#all' do 
+    it '#all' do 
+      jb1 = JungleBeat.new("deep")
+      jb1.append("Mississippi")
+      expect(jb1.all).to eq('deep')
+      jb1.prepend("tee tee tee Mississippi")
+      expect(jb1.all).to eq("tee tee tee deep")
     end
   end
 
@@ -34,7 +58,7 @@ RSpec.describe JungleBeat do
   end
 
   describe '#play' do 
-    it '' do
+    xit 'says jungle beats' do
       @jb.append("deep doo ditt woo hoo shu")
       expect{ @jb.play }.to output{a_string_including(“deep doo ditt woo hoo shu”)}.to_stdout_from_any_process
     end
