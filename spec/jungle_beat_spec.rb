@@ -31,6 +31,14 @@ RSpec.describe JungleBeat do
     end
   end
 
+  describe '#count' do 
+    it 'counts nodes in its list' do 
+      @jb.append("deep doo ditt")
+      @jb.append("woo hoo shu")
+      expect(@jb.count).to eq(6)
+    end
+  end
+
   describe '#prepend' do 
     it 'prepends nodes' do 
       jb1 = JungleBeat.new("deep")
@@ -46,21 +54,6 @@ RSpec.describe JungleBeat do
       expect(jb1.all).to eq('deep')
       jb1.prepend("tee tee tee Mississippi")
       expect(jb1.all).to eq("tee tee tee deep")
-    end
-  end
-
-  describe '#count' do 
-    it 'counts nodes in its list' do 
-      @jb.append("deep doo ditt")
-      @jb.append("woo hoo shu")
-      expect(@jb.count).to eq(6)
-    end
-  end
-
-  describe '#play' do 
-    xit 'says jungle beats' do
-      @jb.append("deep doo ditt woo hoo shu")
-      expect{ @jb.play }.to output{a_string_including(“deep doo ditt woo hoo shu”)}.to_stdout_from_any_process
     end
   end
 end
