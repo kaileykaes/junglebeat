@@ -56,4 +56,32 @@ RSpec.describe JungleBeat do
       expect(jb1.all).to eq("tee tee tee deep")
     end
   end
+
+  describe 'speed & voice' do 
+    it 'rate' do 
+      jb1 = JungleBeat.new("deep dop dop deep")
+      expect(jb1.rate).to eq(500)
+      # require 'pry'; binding.pry
+      jb1.rate = 100
+      expect(jb1.rate).to eq(100)
+      jb1.play
+    end
+
+    it 'voice' do 
+      jb1 = JungleBeat.new("deep dop dop deep")
+      expect(jb1.voice).to eq('boing')
+      jb1.voice = 'Daniel'
+      expect(jb1.voice).to eq('Daniel')
+      jb1.play
+    end
+
+    it '#reset_voice' do 
+      jb1 = JungleBeat.new("deep dop dop deep")
+      expect(jb1.voice).to eq('boing')
+      jb1.voice = 'Daniel'
+      expect(jb1.voice).to eq('Daniel')
+      expect(jb1.reset_voice).to eq('boing')
+      jb1.play
+    end
+  end
 end
