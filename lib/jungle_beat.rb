@@ -1,10 +1,15 @@
 class JungleBeat
-  attr_reader :list
+  attr_reader :list,
               :sound
+  attr_accessor :rate,
+                :voice
+          
   
   def initialize(sound = '')
     @list = LinkedList.new
     @sound = append(sound)
+    @rate = 500
+    @voice = 'boing'
   end
 
   def append(datas)
@@ -19,8 +24,7 @@ class JungleBeat
   end
 
   def play 
-    music = @list.to_string
-    `say -r 500 -v boing #{music}`
+    `say -r #{@rate} -v #{@voice} #{@list.to_string}`
   end
 
   def all
@@ -34,11 +38,15 @@ class JungleBeat
     end
   end
 
+  def reset_voice
+    @voice = 'boing'
+  end
+
   #helpers
 
   def validate?(data)
     ['crack', 'woo', 'tee', 'hoo', 'shu', 
-      'deep', 'ditt', 'frack', 'doo', 
-      'click', 'doop', 'gof', 'pof'].include?(data)
+      'deep', 'ditt', 'frack', 'doo', 'click', 
+      'doop', 'gof', 'pof', 'bop' 'boop' 'la' 'na'].include?(data)
   end
 end
