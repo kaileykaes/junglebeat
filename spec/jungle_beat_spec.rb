@@ -22,6 +22,10 @@ RSpec.describe JungleBeat do
       expect(@jb.list.head.data).to eq('deep')
       expect(@jb.list.head.next_node.data).to eq('doo')
     end
+
+    it 'returns count of nodes' do 
+      expect(@jb.append('deep')).to eq(1)
+    end
   end
 
   describe '#validate?' do 
@@ -61,7 +65,6 @@ RSpec.describe JungleBeat do
     it 'rate' do 
       jb1 = JungleBeat.new("deep dop dop deep")
       expect(jb1.rate).to eq(500)
-      # require 'pry'; binding.pry
       jb1.rate = 100
       expect(jb1.rate).to eq(100)
       jb1.play
