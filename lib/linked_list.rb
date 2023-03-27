@@ -6,7 +6,7 @@ class LinkedList
   end
 
   def append(data)
-    if @head == nil
+    if @head == nil 
       @head = Node.new(data) 
     else
       present_node = @head 
@@ -18,17 +18,17 @@ class LinkedList
   end
   
   def count 
-    tick_marks = 1
+    counter = 1
     if @head == nil 
       0 
     else
       present_node = @head 
       while present_node.next_node != nil
         present_node = present_node.next_node 
-        tick_marks += 1
+        counter += 1
       end
     end
-    tick_marks
+    counter
   end
   
   def to_string
@@ -43,7 +43,7 @@ class LinkedList
   end
 
   def prepend(data)
-    if @head == nil
+    if @head == nil 
       @head = Node.new(data)
     else
       present_node = Node.new(data)
@@ -85,15 +85,11 @@ class LinkedList
       true
     else
       until present_node.next_node == nil
-        return true if present_node.data == node_data
+        true if present_node.data == node_data
         present_node = present_node.next_node
       end
     end
-    if present_node.data == node_data 
-      true 
-    else 
-      false
-    end
+    present_node.data == node_data 
   end
 
   def pop
@@ -105,6 +101,6 @@ class LinkedList
     end
     saved_data = present_node.data 
     prior_node.next_node = nil
-    saved_data
+    saved_data 
   end
 end
