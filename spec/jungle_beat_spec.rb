@@ -23,15 +23,16 @@ RSpec.describe JungleBeat do
       expect(@jb.list.head.next_node.data).to eq('doo')
     end
 
-    it 'returns count of nodes' do 
-      expect(@jb.append('deep')).to eq(1)
+    it 'only appends nodes for valid data' do 
+      @jb.append('crack deep frack click doop gof pof hjk;')
+      expect(@jb.list.to_string).to eq('crack deep frack click doop gof pof')
     end
   end
 
   describe '#validate?' do 
-    it 'only appends nodes for valid data' do 
-      @jb.append('crack deep frack click doop gof pof hjk;')
-      expect(@jb.list.to_string).to eq('crack deep frack click doop gof pof')
+    it 'validates data' do 
+      expect(@jb.validate?('crack')).to be true 
+      expect(@jb.validate?('frop')).to be false
     end
   end
 
