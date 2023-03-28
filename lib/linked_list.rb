@@ -10,7 +10,7 @@ class LinkedList
       @head = Node.new(data) 
     else
       present_node = @head 
-      while present_node.next_node != nil
+      until present_node.next_node == nil
         present_node = present_node.next_node 
       end
       present_node.next_node = Node.new(data) 
@@ -23,7 +23,7 @@ class LinkedList
       0 
     else
       present_node = @head 
-      while present_node.next_node != nil
+      until present_node.next_node == nil
         present_node = present_node.next_node 
         counter += 1
       end
@@ -32,24 +32,20 @@ class LinkedList
   end
   
   def to_string
-    node_data_container = []
+    node_data = ''
     present_node = @head 
-    while present_node.next_node != nil
-      node_data_container << present_node.data
+    until present_node.next_node == nil
+      node_data += "#{present_node.data}"
+      node_data += ' '
       present_node = present_node.next_node 
     end
-    node_data_container << present_node.data
-    node_data_container.join(' ')
+    node_data += "#{present_node.data}"
   end
 
   def prepend(data)
-    if @head == nil 
-      @head = Node.new(data)
-    else
-      present_node = Node.new(data)
-      present_node.next_node = @head
-      @head = present_node
-    end
+    present_node = Node.new(data)
+    present_node.next_node = @head
+    @head = present_node
   end
 
   def insert(position, data)
