@@ -17,15 +17,15 @@ class JungleBeat
     node_data.map do |data|
       @list.append(data) if validate?(data)
     end
-    @list.count
   end
-
+  
   def count
     @list.count
   end
-
+  
   def play 
     `say -r #{@rate} -v #{@voice} #{all}`
+    @list.count
   end
 
   def all
