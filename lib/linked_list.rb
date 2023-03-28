@@ -81,15 +81,11 @@ class LinkedList
       true
     else
       until present_node.next_node == nil
-        return true if present_node.data == node_data
+        true if present_node.data == node_data
         present_node = present_node.next_node
       end
     end
-    if present_node.data == node_data 
-      true 
-    else 
-      false
-    end
+    present_node.data == node_data 
   end
 
   def pop
