@@ -76,16 +76,7 @@ class LinkedList
   end
 
   def includes?(node_data) 
-    present_node = @head 
-    if present_node.data == node_data 
-      true
-    else
-      until present_node.next_node == nil
-        true if present_node.data == node_data
-        present_node = present_node.next_node
-      end
-    end
-    present_node.data == node_data 
+    to_string.include?(node_data)
   end
 
   def pop
