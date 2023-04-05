@@ -13,8 +13,7 @@ class JungleBeat
   end
 
   def append(datas)
-    node_data = datas.split(' ')
-    node_data.map do |data|
+    split_node_data(datas).map do |data|
       @list.append(data) if validate?(data)
     end
   end
@@ -33,8 +32,7 @@ class JungleBeat
   end
 
   def prepend(datas)
-    node_data = datas.split(' ')
-    node_data.map do |data|
+    split_node_data(datas).map do |data|
       @list.prepend(data) if validate?(data)
     end
   end
@@ -49,5 +47,9 @@ class JungleBeat
     ['crack', 'woo', 'tee', 'hoo', 'shu', 
      'deep', 'ditt', 'frack', 'doo', 'click', 
      'doop', 'gof', 'pof', 'bop', 'boop', 'la', 'na'].include?(data)
+  end
+
+  def split_node_data(datas)
+    datas.split(' ')
   end
 end
