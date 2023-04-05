@@ -47,7 +47,7 @@ class JungleBeat
 
   def validate?(data)
     ['crack', 'woo', 'tee', 'hoo', 'shu', 
-      'deep', 'ditt', 'frack', 'doo', 'click', 
-      'doop', 'gof', 'pof', 'bop' 'boop' 'la' 'na'].include?(data)
+     'deep', 'ditt', 'frack', 'doo', 'click', 
+     'doop', 'gof', 'pof', 'bop', 'boop', 'la', 'na'].include?(data)
   end
 end
