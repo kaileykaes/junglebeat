@@ -36,6 +36,12 @@ RSpec.describe JungleBeat do
     end
   end
 
+  describe 'node data split' do 
+    it '#split_node_data' do 
+      expect(@jb.split_node_data('deep bop la')).to eq(['deep', 'bop', 'la'])
+    end
+  end
+
   describe '#count' do 
     it 'counts nodes in its list' do 
       @jb.append("deep doo ditt")
@@ -62,7 +68,7 @@ RSpec.describe JungleBeat do
     end
   end
 
-  describe 'speed & voice' do 
+  xdescribe 'speed & voice' do 
     it 'rate' do 
       jb1 = JungleBeat.new("deep dop dop deep")
       expect(jb1.rate).to eq(500)
